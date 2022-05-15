@@ -85,8 +85,8 @@ class GroupsController extends Controller
      */
     public function update(Request $request, $id)
     {
-        groups::find($id)->update([
-            'name' => $request->nama,
+        Groups::find($id)->update([
+            'name' => $request->name,
             'description' => $request->description
         ]);
 
@@ -102,6 +102,6 @@ class GroupsController extends Controller
     public function destroy($id)
     {
         Groups::find($id)->delete();
-        return redirect('/');
+        return redirect('/groups');
     }
 }

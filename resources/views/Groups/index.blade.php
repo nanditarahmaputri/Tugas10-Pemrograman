@@ -8,11 +8,17 @@
 
 <div class="card" style="width: 18rem;">
   <div class="card-body">
-    <a href="/Groups/{{$group['id']}}" class="card-title">{{ $group['name'] }}</a>
+    <a href="/groups/{{$group['id']}}" class="card-title">{{ $group['name'] }}</a>
       <p class="card-text">{{ $group['description'] }}.</p>
+      <hr>
+       <a href="" class="card-link btn-primary">Tambah anggota teman</a>
+        @foreach ($group->friends as $friend)
+        <li> {{$friend->nama}} </li>
+        @endforeach
 
-    <a href="/Groups/{{$group['id']}}/edit" class="card-link btn-warning">Edit Group</a>
-    <form action="/Groups/{{ $group['id']}}" method="POST">
+      <hr>
+    <a href="/groups/{{$group['id']}}/edit" class="card-link btn-warning">Edit Group</a>
+    <form action="/groups/{{ $group['id']}}" method="POST">
         @csrf
         @method('DELETE')
         <button class="card-link btn-danger">Delete Group</button>

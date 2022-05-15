@@ -1,29 +1,22 @@
 @extends('layouts.app')
 
-@section('title', 'Groups')
+@section('title', 'group')
 
 @section('content')
-<form action ="/groups/{{ $groups['id'] }}" method="POST">
+<form action ="/groups/{{ $group['id'] }}" method="POST">
   @csrf
   @method('PUT')
   <div class="mb-3">
-    <label for="exampleInputEmail1" class="form-label">Nama</label>
-    <input type="text" class="form-control" id="exampleInputEmail1" name="nama" aria-describedby="emailHelp" value="{{ old('nama') ? old('nama') : $groups['nama'] }}"> 
-    @error('nama')
+    <label for="exampleInputEmail1" class="form-label">Name</label>
+    <input type="text" class="form-control" id="exampleInputEmail1" name="Name" aria-describedby="emailHelp" value="{{ old('name') ? old('name') : $group['name'] }}"> 
+    @error('Name')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror 
   </div>
   <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">No Telp </label>
-    <input type="text" class="form-control" name="no_telp" id="exampleInputPassword1" value="{{ old('no_telp') ? old('no_telp') : $groups['no_telp'] }}"> 
-    @error('no_telp')
-    <div class="alert alert-danger">{{ $message }}</div>
-    @enderror
-  </div>
-  <div class="mb-3">
-    <label for="exampleInputPassword1" class="form-label">Alamat </label>
-    <input type="text" class="form-control" name="alamat" id="exampleInputPassword1" value="{{ old('alamat') ? old('alamat') : $groups['alamat'] }}"> 
-    @error('alamat')
+    <label for="exampleInputPassword1" class="form-label">Description </label>
+    <input type="text" class="form-control" name="description" id="exampleInputPassword1" value="{{ old('description') ? old('description') : $group['description'] }}"> 
+    @error('description')
     <div class="alert alert-danger">{{ $message }}</div>
     @enderror
   </div>
