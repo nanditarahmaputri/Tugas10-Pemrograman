@@ -4,9 +4,11 @@
 
 @section('content')
 <a href="/groups/create" class="card-link btn btn-primary">Tambah group</a>
+<div class="row">
+  <div class="col d-inline-flex">
 @foreach  ($groups as $group)
 
-<div class="card" style="width: 18rem;">
+<div class="card mt-2 me-2 bg-info" style="width: 18rem;">
   <div class="card-body">
     <a href="/groups/{{$group['id']}}" class="card-title">{{ $group['name'] }}</a>
       <p class="card-text">{{ $group['description'] }}.</p>
@@ -27,8 +29,8 @@
 </div>
     
 @endforeach
-<div?>
-    {{ $groups->links() }}
 </div>
+</div>
+
 @endsection
     
