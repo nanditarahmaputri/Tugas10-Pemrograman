@@ -3,7 +3,7 @@
 @section('title', 'friends')
 
 @section('content')
-<a href="/friends/create" class="card-link btn-primary">Tambah teman</a>
+<a href="/friends/create" class="card-link btn btn-primary">Tambah teman</a>
 @foreach  ($friends as $friend)
 
 <div class="card" style="width: 18rem;">
@@ -12,11 +12,11 @@
       <h6 class="card-subtitle mb-2 text-muted">{{ $friend['no_telp'] }}</h6>
       <p class="card-text">{{ $friend['alamat'] }}.</p>
 
-    <a href="/friends/{{$friend['id']}}/edit" class="card-link btn-warning">Edit teman</a>
+    <a href="/friends/{{$friend['id']}}/edit" class="card-link btn btn-warning">Edit teman</a>
     <form action="/friends/{{ $friend['id']}}" method="POST">
         @csrf
         @method('DELETE')
-        <button class="card-link btn-danger">Delete teman</button>
+        <button class="card-link btn btn-danger">Delete teman</button>
     </form>
   </div>
 </div>

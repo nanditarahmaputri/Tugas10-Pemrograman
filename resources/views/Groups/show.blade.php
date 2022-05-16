@@ -5,9 +5,11 @@
 @section('content')
     <div class="card">
         <div class="card-body">
-        <h3>Nama teman : {{ $friends['nama'] }}</h3>
-        <h3>No Telp teman : {{ $friends['no_telp'] }}</h3>
-        <h3>Alamat teman : {{ $friends['alamat'] }}</h3>
+        <h3>Nama Group : {{ $groups['name'] }}</h3>
+        <h3>Description : {{ $groups['description'] }}</h3>
+        <h3>Jumlah anggota : 3</h3>
+        <h3>Jumlah anggota yang pernah masuk : 3</h3>
+        <h3>Jumlah anggota yang keluar: </h3>
         </div>
     </div>
 @endsection
